@@ -1,0 +1,194 @@
+/**
+ * Hero Section Styles
+ * 
+ * Principles Applied:
+ * - Visual Impact: Full-screen hero experience
+ * - Performance: GPU-accelerated animations
+ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 4vw 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid Background */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+/* Scan Line Effect */
+.hero-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  top: 0;
+  background: linear-gradient(90deg, transparent, var(--color-brand-cyan), transparent);
+  opacity: 0.5;
+  animation: scan 8s linear infinite;
+  pointer-events: none;
+}
+
+/* Radial Glow */
+.hero-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(0, 102, 204, 0.2) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Corner Brackets */
+.corner {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-color: rgba(0, 212, 255, 0.25);
+  border-style: solid;
+}
+
+.corner.top-left {
+  top: 80px;
+  left: 4vw;
+  border-width: 1px 0 0 1px;
+}
+
+.corner.top-right {
+  top: 80px;
+  right: 4vw;
+  border-width: 1px 1px 0 0;
+}
+
+.corner.bottom-left {
+  bottom: 4rem;
+  left: 4vw;
+  border-width: 0 0 1px 1px;
+}
+
+.corner.bottom-right {
+  bottom: 4rem;
+  right: 4vw;
+  border-width: 0 1px 1px 0;
+}
+
+/* Side Labels */
+.hero-side-label {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.hero-side-label.left {
+  left: 2vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-side-label.right {
+  right: 2vw;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Hero Content */
+.hero h1 {
+  animation: fadeUp 0.9s 0.1s ease both;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(90deg, var(--color-brand-cyan), #80eeff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 520px;
+  font-weight: var(--font-weight-light);
+  animation: fadeUp 1s 0.2s ease both;
+  margin-bottom: 2.5rem;
+  line-height: var(--line-height-relaxed);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Hero Actions */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 1s 0.3s ease both;
+  margin-bottom: 5rem;
+}
+
+/* Hero Stats Bar */
+.hero-stats {
+  display: flex;
+  gap: 0;
+  animation: fadeUp 1s 0.4s ease both;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.4rem 3rem;
+  position: relative;
+}
+
+.stat-item + .stat-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 1px;
+  background: var(--color-border-secondary);
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: var(--font-weight-extra-bold);
+  color: white;
+  line-height: 1;
+}
+
+.stat-num span {
+  color: var(--color-brand-cyan);
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-text-tertiary);
+  margin-top: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

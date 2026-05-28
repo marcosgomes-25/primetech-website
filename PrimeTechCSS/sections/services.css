@@ -1,0 +1,53 @@
+/**
+ * Services Section Styles
+ * 
+ * Principles Applied:
+ * - Grid Layout: Responsive card layout
+ * - Visual Hierarchy: Clear section structure
+ */
+
+.services {
+  background: var(--color-bg-secondary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--color-border-secondary);
+  border: 1px solid var(--color-border-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.service-card .service-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-brand-cyan);
+  font-weight: var(--font-weight-normal);
+  margin-bottom: 0.75rem;
+  opacity: 1;
+}
+
+.service-card h3 {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1.5rem;
+}

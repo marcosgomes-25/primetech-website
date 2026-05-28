@@ -1,0 +1,86 @@
+/**
+ * Global CSS Variables
+ * 
+ * Principles Applied:
+ * - Single Responsibility: Only color and spacing variables
+ * - DRY: Centralized variable definitions
+ * - Scalability: Easy to maintain and update design tokens
+ */
+
+:root {
+  /* Color Palette */
+  --color-bg-primary: #03080f;
+  --color-bg-secondary: #060f1c;
+  --color-bg-tertiary: #091424;
+  --color-panel-primary: #0a1628;
+  --color-panel-secondary: #0d1e35;
+  
+  /* Brand Colors */
+  --color-brand-blue: #0066cc;
+  --color-brand-cyan: #00d4ff;
+  --color-brand-cyan-alt: #00aacc;
+  --color-brand-green: #00ff88;
+  --color-brand-green-alt: #00cc66;
+  
+  /* Text Colors */
+  --color-text-primary: #c8d8f0;
+  --color-text-secondary: #6a8aaa;
+  --color-text-tertiary: #3a5a7a;
+  
+  /* Border & Glow */
+  --color-border-primary: rgba(0, 212, 255, 0.1);
+  --color-border-secondary: rgba(0, 212, 255, 0.06);
+  --color-glow: rgba(0, 212, 255, 0.15);
+  
+  /* Semantic Colors */
+  --color-success: #ff3b30;
+  --color-warning: #ff9500;
+  --color-status-ok: #00ff88;
+  
+  /* Spacing Scale */
+  --spacing-2xs: 4px;
+  --spacing-xs: 6px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 32px;
+  --spacing-4xl: 48px;
+  --spacing-5xl: 64px;
+  
+  /* Typography */
+  --font-primary: 'DM Sans', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  
+  /* Border Radius */
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+  
+  /* Z-Index Scale */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 150;
+  --z-fixed: 200;
+  --z-modal: 1000;
+  
+  /* Line Height */
+  --line-height-tight: 1.05;
+  --line-height-normal: 1.7;
+  --line-height-relaxed: 1.85;
+}

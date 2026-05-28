@@ -1,0 +1,160 @@
+<!-- 
+  Why Us Section
+  
+  Single Responsibility: Display company advantages and features
+  Dependencies: CSS (why-us.css, cards.css, info-boxes.css)
+-->
+
+<section class="why-us-section" id="why-us">
+  <div class="why-us-container">
+    <div>
+      <span class="section-eyebrow">Por que a Primetech</span>
+      <h2 class="section-title">Tecnologia com propósito. Suporte com compromisso.</h2>
+      <p class="section-desc" style="margin-bottom: 2.5rem">
+        Especialistas em infraestrutura de TI com soluções sob medida para empresas que precisam de confiabilidade e agilidade.
+      </p>
+
+      <div class="why-us-features">
+        <div class="feature-item">
+          <div class="feature-dot">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Segurança e Estabilidade</h4>
+            <p>Boas práticas de hardening e monitoramento proativo para proteger seu ambiente 24/7.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-dot">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Resposta Ágil</h4>
+            <p>Atendimento remoto e presencial com SLA ajustado às necessidades do seu negócio.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-dot">
+            <svg viewBox="0 0 24 24">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Visibilidade Total</h4>
+            <p>Dashboards e alertas em tempo real para visibilidade completa sobre seu ambiente.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-dot">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Parceria Estratégica</h4>
+            <p>Trabalhamos junto à sua equipe para evoluir a infraestrutura conforme o crescimento da empresa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-header">
+        <span class="info-box-title">// monitor.sys — live feed</span>
+        <div class="info-box-actions">
+          <div class="info-box-action-dot error"></div>
+          <div class="info-box-action-dot warning"></div>
+          <div class="info-box-action-dot success"></div>
+        </div>
+      </div>
+
+      <div class="info-box-content">
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label">
+            <span>CPU_LOAD · srv-web-01</span>
+            <span>42%</span>
+          </div>
+          <div class="monitor-bar-track">
+            <div class="monitor-bar-fill" style="width: 42%"></div>
+          </div>
+        </div>
+
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label">
+            <span>MEM_USAGE · srv-web-01</span>
+            <span>67%</span>
+          </div>
+          <div class="monitor-bar-track">
+            <div class="monitor-bar-fill warn" style="width: 67%"></div>
+          </div>
+        </div>
+
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label">
+            <span>DISK_IO · storage-01</span>
+            <span>58%</span>
+          </div>
+          <div class="monitor-bar-track">
+            <div class="monitor-bar-fill" style="width: 58%"></div>
+          </div>
+        </div>
+
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label">
+            <span>NET_BW · uplink</span>
+            <span>31%</span>
+          </div>
+          <div class="monitor-bar-track">
+            <div class="monitor-bar-fill" style="width: 31%"></div>
+          </div>
+        </div>
+
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label">
+            <span>DB_CONN · postgres-01</span>
+            <span>55%</span>
+          </div>
+          <div class="monitor-bar-track">
+            <div class="monitor-bar-fill" style="width: 55%"></div>
+          </div>
+        </div>
+
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label">
+            <span>K8S_NODES · cluster</span>
+            <span>3/3</span>
+          </div>
+          <div class="monitor-bar-track">
+            <div class="monitor-bar-fill" style="width: 100%"></div>
+          </div>
+        </div>
+
+        <div class="info-box-log">
+          <div class="log-line">
+            <em>[OK]</em> 03:42:17 · Backup concluído — srv-db-01
+          </div>
+          <div class="log-line">
+            <em>[OK]</em> 03:38:05 · Certificado SSL renovado
+          </div>
+          <div class="log-line warn">
+            <em>[WARN]</em> 03:31:44 · MEM acima de 65% · srv-web-01
+          </div>
+          <div class="log-line">
+            <em>[OK]</em> 03:28:00 · Health check — todos os serviços
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

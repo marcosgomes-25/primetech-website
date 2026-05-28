@@ -1,0 +1,191 @@
+/**
+ * Primetech Website - Main CSS File
+ * 
+ * Architecture: Modular Layered Approach
+ * 
+ * Import Order:
+ * 1. Global (variables, reset, typography, animations)
+ * 2. Layouts (navbar, footer, sections)
+ * 3. Components (buttons, cards, forms, badges, tags, info-boxes)
+ * 4. Sections (hero, ticker, services, tech-stack, why-us, contact)
+ * 5. Responsive (media queries)
+ * 
+ * Principles Applied:
+ * - Single Responsibility: Each file has one purpose
+ * - DRY: No code repetition
+ * - Maintainability: Easy to locate and modify styles
+ * - Scalability: Easy to add new components
+ * - SOLID: Following interface segregation and open/closed principles
+ */
+
+/* =======================================
+   GLOBAL STYLES
+   ======================================= */
+@import url('./global/variables.css');
+@import url('./global/reset.css');
+@import url('./global/typography.css');
+@import url('./global/scrollbar.css');
+@import url('./global/animations.css');
+
+/* =======================================
+   LAYOUT STYLES
+   ======================================= */
+@import url('./layouts/navbar.css');
+@import url('./layouts/footer.css');
+@import url('./layouts/sections.css');
+
+/* =======================================
+   COMPONENT STYLES
+   ======================================= */
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/forms.css');
+@import url('./components/badges.css');
+@import url('./components/tags.css');
+@import url('./components/info-boxes.css');
+
+/* =======================================
+   SECTION STYLES
+   ======================================= */
+@import url('./sections/hero.css');
+@import url('./sections/ticker.css');
+@import url('./sections/services.css');
+@import url('./sections/technology-stack.css');
+@import url('./sections/why-us.css');
+@import url('./sections/contact.css');
+
+/* =======================================
+   RESPONSIVE STYLES
+   ======================================= */
+@import url('./responsive/media-queries.css');
+
+/* =======================================
+   UTILITY CLASSES
+   ======================================= */
+
+/* Display Utilities */
+.display-none {
+  display: none !important;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+.display-grid {
+  display: grid !important;
+}
+
+/* Spacing Utilities */
+.margin-bottom {
+  margin-bottom: var(--spacing-3xl) !important;
+}
+
+.margin-top {
+  margin-top: var(--spacing-3xl) !important;
+}
+
+.padding-sides {
+  padding-left: 4vw !important;
+  padding-right: 4vw !important;
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Visibility Utilities */
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+/* Opacity Utilities */
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+/* Overflow Utilities */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Shadow Utilities */
+.shadow-small {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-medium {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-large {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Border Utilities */
+.border-top {
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+.border-left {
+  border-left: 1px solid var(--color-border-primary);
+}
+
+.border-right {
+  border-right: 1px solid var(--color-border-primary);
+}
+
+.rounded {
+  border-radius: var(--radius-md);
+}
+
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}

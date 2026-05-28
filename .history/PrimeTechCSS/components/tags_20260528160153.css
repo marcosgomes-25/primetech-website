@@ -1,0 +1,54 @@
+/**
+ * Tag Component Styles
+ * 
+ * Principles Applied:
+ * - Consistency: Unified tag appearance
+ * - Reusability: Used across multiple components
+ */
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: var(--font-weight-normal);
+  background: transparent;
+  color: var(--color-text-tertiary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  display: inline-block;
+}
+
+.tag:hover {
+  color: var(--color-text-secondary);
+  border-color: rgba(0, 212, 255, 0.15);
+}
+
+/* Tag Group Container */
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1.5rem;
+}
+
+/* Tag Variants */
+.tag-primary {
+  border-color: rgba(0, 102, 204, 0.2);
+  color: var(--color-brand-blue);
+}
+
+.tag-primary:hover {
+  border-color: rgba(0, 102, 204, 0.4);
+}
+
+.tag-secondary {
+  border-color: rgba(0, 212, 255, 0.15);
+  color: var(--color-text-secondary);
+}
+
+.tag-secondary:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+}

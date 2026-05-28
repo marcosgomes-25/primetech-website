@@ -1,0 +1,56 @@
+/**
+ * Badge Component Styles
+ * 
+ * Principles Applied:
+ * - Single Responsibility: Badge-specific styling
+ * - Visual Hierarchy: Clear distinction for badges
+ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  color: var(--color-brand-cyan-alt);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--font-weight-normal);
+  padding: 7px 20px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-brand-green);
+  box-shadow: 0 0 8px var(--color-brand-green);
+  animation: blink 1.5s infinite;
+}
+
+/* Animated Badge (Hero) */
+.badge-animated {
+  animation: fadeUp 0.8s ease both;
+}
+
+/* Badge Variants */
+.badge-success {
+  background: rgba(0, 255, 136, 0.05);
+  border-color: rgba(0, 255, 136, 0.2);
+  color: var(--color-brand-green);
+}
+
+.badge-warning {
+  background: rgba(255, 149, 0, 0.05);
+  border-color: rgba(255, 149, 0, 0.2);
+  color: #ff9500;
+}
+
+.badge-error {
+  background: rgba(255, 59, 48, 0.05);
+  border-color: rgba(255, 59, 48, 0.2);
+  color: #ff3b30;
+}

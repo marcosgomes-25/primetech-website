@@ -1,0 +1,86 @@
+/**
+ * Technology Stack Section Styles
+ * 
+ * Principles Applied:
+ * - Grid Layout: Responsive tech grid
+ * - Visual Consistency: Unified icon appearance
+ */
+
+.tech-section {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-secondary);
+  border-bottom: 1px solid var(--color-border-secondary);
+  padding: 5rem 4vw;
+}
+
+.tech-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tech-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--color-border-secondary);
+  border: 1px solid var(--color-border-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tech-item {
+  background: var(--color-bg-secondary);
+  padding: 1.75rem 1rem;
+  text-align: center;
+  transition: background var(--transition-normal);
+  cursor: default;
+}
+
+.tech-item:hover {
+  background: var(--color-panel-primary);
+}
+
+.tech-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  background: rgba(0, 212, 255, 0.04);
+  transition: border-color var(--transition-normal);
+}
+
+.tech-item:hover .tech-icon {
+  border-color: rgba(0, 212, 255, 0.35);
+}
+
+.tech-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-brand-cyan-alt);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.tech-item span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}

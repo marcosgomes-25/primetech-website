@@ -1,0 +1,97 @@
+/**
+ * Global Animations & Keyframes
+ * 
+ * Principles Applied:
+ * - Reusability: Common animations used across components
+ * - Performance: GPU-accelerated transforms
+ */
+
+/* Fade In Up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Blink Animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Grid Move Animation */
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Scan Line Animation */
+@keyframes scan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  95% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Ticker Animation */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Utility classes for animations */
+.animate-fade-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeUp 0.9s 0.1s ease both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fadeUp 1s 0.3s ease both;
+}
+
+.animate-fade-up-delay-4 {
+  animation: fadeUp 1s 0.4s ease both;
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+.animate-blink-fast {
+  animation: blink 1.5s infinite;
+}

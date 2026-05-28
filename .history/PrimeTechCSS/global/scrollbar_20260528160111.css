@@ -1,0 +1,24 @@
+/**
+ * Custom Scrollbar Styles
+ * 
+ * Principles Applied:
+ * - Consistency: Unified scrollbar appearance
+ * - Brand Identity: Using brand colors
+ */
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-cyan);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-cyan-alt);
+}

@@ -1,0 +1,44 @@
+/**
+ * Footer Layout Styles
+ * 
+ * Principles Applied:
+ * - Separation of Concerns: Only footer-specific styling
+ */
+
+footer {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-secondary);
+  padding: 2rem 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo img {
+  height: 30px;
+  width: auto;
+  opacity: 0.6;
+  filter: grayscale(20%);
+  transition: opacity var(--transition-normal);
+}
+
+.footer-logo img:hover {
+  opacity: 1;
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.footer-right {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}

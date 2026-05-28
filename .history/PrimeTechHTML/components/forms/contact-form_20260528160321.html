@@ -1,0 +1,57 @@
+<!-- 
+  Contact Form Component
+  
+  Single Responsibility: Collect contact form submissions
+  Dependencies: CSS (forms.css)
+  Event Handler: handleSubmit(event) - defined in main.js
+-->
+
+<form class="contact-form" onsubmit="handleSubmit(event)">
+  <div class="form-header">
+    <h3>Envie uma mensagem</h3>
+    <p>// Retorno em até 24h úteis</p>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" id="name" placeholder="Seu nome" required />
+    </div>
+    <div class="form-group">
+      <label for="company">Empresa</label>
+      <input type="text" id="company" placeholder="Nome da empresa" />
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="seu@email.com" required />
+    </div>
+    <div class="form-group">
+      <label for="phone">Telefone</label>
+      <input type="tel" id="phone" placeholder="(00) 00000-0000" />
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="service">Serviço</label>
+    <select id="service">
+      <option value="">Selecione um serviço</option>
+      <option>Manutenção de Servidores</option>
+      <option>Monitoramento</option>
+      <option>Suporte ao Usuário</option>
+      <option>Cabeamento Estruturado</option>
+      <option>Outro / Geral</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="message">Mensagem</label>
+    <textarea id="message" placeholder="Descreva o que você precisa..."></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-block">
+    Enviar Mensagem
+  </button>
+</form>

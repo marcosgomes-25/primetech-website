@@ -1,0 +1,52 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="128" height="128" fill="#030810"/>
+  
+  <!-- Outer glow circle -->
+  <circle cx="64" cy="64" r="62" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Main circle background -->
+  <circle cx="64" cy="64" r="56" fill="url(#gradientBg)"/>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="gradientBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0.1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff" />
+      <stop offset="100%" style="stop-color:#0066cc" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- P letter - tech style -->
+  <g filter="url(#glow)">
+    <!-- Top bar of P -->
+    <rect x="40" y="32" width="28" height="6" fill="url(#gradientMain)" rx="2"/>
+    
+    <!-- Vertical bar of P -->
+    <rect x="40" y="32" width="6" height="48" fill="url(#gradientMain)" rx="2"/>
+    
+    <!-- Curved part of P -->
+    <path d="M 68 38 Q 78 38 78 50 Q 78 62 68 62 L 46 62" 
+          fill="none" stroke="url(#gradientMain)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Tech dots accent -->
+  <circle cx="50" cy="88" r="3" fill="#00d4ff" opacity="0.8"/>
+  <circle cx="64" cy="88" r="3" fill="#00d4ff" opacity="0.6"/>
+  <circle cx="78" cy="88" r="3" fill="#00d4ff" opacity="0.4"/>
+  
+  <!-- Border glow -->
+  <circle cx="64" cy="64" r="56" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.5"/>
+</svg>

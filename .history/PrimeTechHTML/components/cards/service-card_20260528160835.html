@@ -1,0 +1,27 @@
+<!-- 
+  Service Card Component
+  
+  Single Responsibility: Display service information
+  Dependencies: CSS (cards.css, tags.css)
+  Parameters: 
+    - number: Service order number
+    - icon: SVG icon code
+    - title: Service name
+    - description: Service description
+    - tags: List of technology tags
+-->
+
+<div class="service-card">
+  <div class="service-num">// 01</div>
+  <div class="service-icon">
+    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+  </div>
+  <h3>Manutenção de Servidores</h3>
+  <p>Administração de servidores físicos e cloud, virtualização, backup, recuperação de dados, hardening e migração para nuvem.</p>
+  <div class="tag-group">
+    <span class="tag">Cloud</span>
+    <span class="tag">Virtualização</span>
+    <span class="tag">Backup</span>
+    <span class="tag">Hardening</span>
+  </div>
+</div>
