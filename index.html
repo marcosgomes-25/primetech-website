@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Primetech Consultoria em TI – Soluções Inteligentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Share+Tech+Mono&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#03080f;
+  --bg2:#060f1c;
+  --bg3:#091424;
+  --panel:#0a1628;
+  --panel2:#0d1e35;
+  --blue:#0066cc;
+  --cyan:#00d4ff;
+  --cyan2:#00aacc;
+  --green:#00ff88;
+  --green2:#00cc66;
+  --text:#c8d8f0;
+  --text2:#6a8aaa;
+  --text3:#3a5a7a;
+  --border:rgba(0,212,255,0.1);
+  --border2:rgba(0,212,255,0.06);
+  --glow:rgba(0,212,255,0.15);
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.7;
+}
+
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 8vw;
+  background:rgba(3,8,15,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border2);
+}
+
+.nav-left{display:flex;align-items:center;gap:2rem}
+
+.nav-logo img{
+  height:65px;width:auto;
+  filter:drop-shadow(0 0 10px rgba(0,212,255,0.3));
+}
+
+.nav-status{
+  display:flex;align-items:center;gap:6px;
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;color:var(--text3);
+  letter-spacing:1px;
+  border-left:1px solid var(--border2);
+  padding-left:1.5rem;
+}
+.nav-status-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 6px var(--green);
+  animation:blink 2s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+.nav-links{
+  display:flex;list-style:none;
+  align-items:center;gap:2rem;
+}
+.nav-links a{
+  color:var(--text2);text-decoration:none;
+  font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  transition:color 0.2s;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;
+  height:1px;background:var(--cyan);
+  transform:scaleX(0);transition:transform 0.2s;
+}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+.nav-cta{
+  background:transparent!important;
+  color:var(--cyan)!important;
+  padding:7px 20px!important;
+  border:1px solid rgba(0,212,255,0.3)!important;
+  border-radius:3px!important;
+  font-size:11px!important;font-weight:500!important;
+  letter-spacing:2px!important;text-transform:uppercase!important;
+  transition:all 0.2s!important;
+}
+.nav-cta:hover{
+  background:rgba(0,212,255,0.08)!important;
+  border-color:var(--cyan)!important;
+  color:white!important;
+  box-shadow:0 0 20px rgba(0,212,255,0.15)!important;
+}
+.nav-cta::after{display:none!important}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:8rem 4vw 5rem;
+  position:relative;overflow:hidden;
+}
+
+/* animated grid */
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+  background-size:50px 50px;
+  animation:gridMove 20s linear infinite;
+}
+@keyframes gridMove{
+  0%{background-position:0 0}
+  100%{background-position:50px 50px}
+}
+
+/* scan line */
+.hero-scan{
+  position:absolute;left:0;right:0;height:2px;top:0;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:0.5;
+  animation:scan 8s linear infinite;
+  pointer-events:none;
+}
+@keyframes scan{
+  0%{top:0;opacity:0}
+  5%{opacity:0.5}
+  95%{opacity:0.5}
+  100%{top:100%;opacity:0}
+}
+
+/* radial glow */
+.hero-glow{
+  position:absolute;
+  top:30%;left:50%;transform:translate(-50%,-50%);
+  width:900px;height:600px;
+  background:radial-gradient(ellipse, rgba(0,102,204,0.2) 0%, transparent 65%);
+  pointer-events:none;
+}
+
+/* corner brackets */
+.corner{position:absolute;width:50px;height:50px;border-color:rgba(0,212,255,0.25);border-style:solid}
+.corner.tl{top:80px;left:4vw;border-width:1px 0 0 1px}
+.corner.tr{top:80px;right:4vw;border-width:1px 1px 0 0}
+.corner.bl{bottom:4rem;left:4vw;border-width:0 0 1px 1px}
+.corner.br{bottom:4rem;right:4vw;border-width:0 1px 1px 0}
+
+/* side labels */
+.hero-side-label{
+  position:absolute;
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;letter-spacing:3px;
+  color:var(--text3);text-transform:uppercase;
+  writing-mode:vertical-rl;
+}
+.hero-side-label.left{left:2vw;top:50%;transform:translateY(-50%)}
+.hero-side-label.right{right:2vw;top:50%;transform:translateY(-50%) rotate(180deg)}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(0,212,255,0.05);
+  border:1px solid rgba(0,212,255,0.2);
+  color:var(--cyan2);
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;font-weight:400;
+  padding:7px 20px;
+  border-radius:2px;
+  margin-bottom:2.5rem;
+  letter-spacing:3px;text-transform:uppercase;
+  animation:fadeUp 0.8s ease both;
+}
+.hero-badge-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 8px var(--green);
+  animation:blink 1.5s infinite;
+}
+
+.hero h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.8rem,6vw,5.5rem);
+  font-weight:800;line-height:1.05;
+  letter-spacing:-2.5px;
+  max-width:850px;
+  animation:fadeUp 0.9s 0.1s ease both;
+  margin-bottom:1.5rem;
+}
+
+.hero h1 .highlight{
+  background:linear-gradient(90deg, var(--cyan), #80eeff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.hero-sub{
+  font-size:1rem;color:var(--text2);
+  max-width:520px;font-weight:300;
+  animation:fadeUp 1s 0.2s ease both;
+  margin-bottom:2.5rem;line-height:1.8;
+  font-family:'Share Tech Mono',monospace;
+  font-size:12px;letter-spacing:0.5px;
+}
+
+.hero-actions{
+  display:flex;gap:1rem;flex-wrap:wrap;
+  justify-content:center;
+  animation:fadeUp 1s 0.3s ease both;
+  margin-bottom:5rem;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue),var(--cyan2));
+  color:white;padding:13px 32px;
+  border-radius:3px;font-size:11px;font-weight:500;
+  text-decoration:none;border:none;cursor:pointer;
+  display:inline-block;letter-spacing:2px;text-transform:uppercase;
+  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 0 30px rgba(0,170,204,0.2);
+}
+.btn-primary:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 0 40px rgba(0,212,255,0.3)}
+
+.btn-secondary{
+  background:transparent;color:var(--text2);
+  padding:13px 32px;border-radius:3px;
+  font-size:11px;font-weight:400;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,0.1);
+  transition:border-color 0.2s,color 0.2s;
+  display:inline-block;letter-spacing:2px;text-transform:uppercase;
+}
+.btn-secondary:hover{border-color:rgba(0,212,255,0.4);color:var(--cyan)}
+
+/* hero stats bar */
+.hero-stats{
+  display:flex;gap:0;
+  animation:fadeUp 1s 0.4s ease both;
+  border:1px solid var(--border2);
+  border-radius:3px;overflow:hidden;
+  background:rgba(0,0,0,0.3);
+}
+.stat-item{
+  text-align:center;padding:1.4rem 3rem;
+  position:relative;
+}
+.stat-item+.stat-item::before{
+  content:'';position:absolute;left:0;top:20%;bottom:20%;
+  width:1px;background:var(--border2);
+}
+.stat-num{
+  font-family:'Syne',sans-serif;
+  font-size:1.9rem;font-weight:800;color:white;line-height:1;
+}
+.stat-num span{color:var(--cyan)}
+.stat-label{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:var(--text3);
+  margin-top:5px;letter-spacing:2px;text-transform:uppercase;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ─── TICKER ─── */
+.ticker-wrap{
+  background:var(--bg2);
+  border-top:1px solid var(--border2);
+  border-bottom:1px solid var(--border2);
+  padding:10px 0;overflow:hidden;white-space:nowrap;
+}
+.ticker{display:inline-flex;gap:2.5rem;animation:ticker 30s linear infinite}
+.ticker-item{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--text3);display:inline-flex;align-items:center;gap:10px;
+}
+.ticker-item em{font-style:normal;color:var(--cyan);opacity:0.7}
+.ticker-sep{color:var(--border);font-size:14px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ─── SECTION BASE ─── */
+section{padding:7rem 4vw}
+
+.section-eyebrow{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;font-weight:400;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--cyan2);margin-bottom:1rem;
+  display:flex;align-items:center;gap:12px;
+}
+.section-eyebrow::before{
+  content:'';width:30px;height:1px;background:var(--cyan2);display:block;
+}
+
+.section-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:700;letter-spacing:-1px;
+  line-height:1.12;max-width:560px;margin-bottom:1rem;
+}
+
+.section-desc{
+  color:var(--text2);max-width:480px;
+  font-size:14px;font-weight:300;line-height:1.85;
+}
+
+/* ─── SERVICES ─── */
+.services{background:var(--bg2)}
+
+.services-header{text-align:center;margin-bottom:4rem}
+.services-header .section-eyebrow{justify-content:center}
+.services-header .section-eyebrow::before{display:none}
+.services-header .section-title,
+.services-header .section-desc{max-width:600px;margin-left:auto;margin-right:auto}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  max-width:1100px;margin:0 auto;
+  background:var(--border2);
+  border:1px solid var(--border2);
+  border-radius:4px;overflow:hidden;
+}
+
+.service-card{
+  background:var(--bg2);
+  padding:2.5rem 2rem;
+  transition:background 0.3s;
+  position:relative;cursor:default;
+}
+.service-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,212,255,0.03),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.service-card:hover{background:var(--panel)}
+.service-card:hover::after{opacity:1}
+
+.service-num{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;letter-spacing:3px;
+  color:var(--cyan);opacity:0.35;
+  margin-bottom:1.5rem;
+}
+
+.service-icon{
+  width:46px;height:46px;
+  border:1px solid rgba(0,212,255,0.15);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.25rem;
+  background:rgba(0,212,255,0.04);
+  transition:border-color 0.3s,box-shadow 0.3s;
+}
+.service-card:hover .service-icon{
+  border-color:rgba(0,212,255,0.4);
+  box-shadow:0 0 20px rgba(0,212,255,0.1);
+}
+.service-icon svg{width:20px;height:20px;stroke:var(--cyan2);stroke-width:1.5;fill:none}
+
+.service-card h3{
+  font-family:'Syne',sans-serif;
+  font-size:1rem;font-weight:700;
+  margin-bottom:0.75rem;letter-spacing:-0.2px;
+}
+
+.service-card p{color:var(--text2);font-size:13.5px;line-height:1.75;font-weight:300}
+
+.service-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.5rem}
+
+.tag{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;font-weight:400;
+  background:transparent;color:var(--text3);
+  border:1px solid rgba(255,255,255,0.06);
+  padding:3px 10px;border-radius:2px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  transition:color 0.2s,border-color 0.2s;
+}
+.service-card:hover .tag{color:var(--text2);border-color:rgba(0,212,255,0.15)}
+
+/* ─── WHY US ─── */
+.whyus-section{background:var(--bg)}
+
+.whyus{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+  max-width:1100px;margin:0 auto;
+}
+
+.whyus-features{
+  display:flex;flex-direction:column;gap:0;
+  border:1px solid var(--border2);border-radius:4px;overflow:hidden;
+}
+
+.feature-item{
+  display:flex;gap:1.25rem;align-items:flex-start;
+  padding:1.5rem;
+  border-bottom:1px solid var(--border2);
+  transition:background 0.2s;
+}
+.feature-item:last-child{border-bottom:none}
+.feature-item:hover{background:rgba(0,212,255,0.02)}
+
+.feature-dot{
+  width:32px;height:32px;min-width:32px;
+  background:rgba(0,212,255,0.06);
+  border:1px solid rgba(0,212,255,0.15);
+  border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.feature-dot svg{width:14px;height:14px;stroke:var(--cyan2);stroke-width:2;fill:none}
+
+.feature-item h4{
+  font-family:'Syne',sans-serif;
+  font-size:13px;font-weight:700;
+  margin-bottom:3px;
+}
+.feature-item p{font-size:12.5px;color:var(--text2);font-weight:300;line-height:1.65}
+
+/* monitoring box */
+.visual-box{
+  background:var(--bg3);
+  border:1px solid var(--border2);
+  border-radius:4px;overflow:hidden;
+  font-family:'Share Tech Mono',monospace;
+}
+
+.visual-header{
+  padding:0.75rem 1.25rem;
+  border-bottom:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(0,0,0,0.3);
+}
+.visual-title{
+  font-size:9px;font-weight:400;
+  color:var(--text3);
+  letter-spacing:3px;text-transform:uppercase;
+}
+.vdots{display:flex;gap:5px}
+.vdot{width:7px;height:7px;border-radius:50%}
+.vdot.r{background:#ff3b30}.vdot.y{background:#ff9500}.vdot.g{background:var(--green)}
+
+.monitoring-demo{padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+
+.monitor-bar-row{display:flex;flex-direction:column;gap:5px}
+
+.monitor-bar-label{
+  display:flex;justify-content:space-between;
+  font-size:10px;color:var(--text3);letter-spacing:0.5px;
+}
+.monitor-bar-label span:last-child{color:var(--text2)}
+
+.monitor-bar-track{
+  height:3px;background:rgba(255,255,255,0.04);
+  border-radius:1px;overflow:hidden;
+}
+.monitor-bar-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+}
+.monitor-bar-fill.warn{background:linear-gradient(90deg,#cc6600,#ff9500)}
+
+.monitor-log{
+  margin-top:0.5rem;
+  border-top:1px solid var(--border2);
+  padding-top:0.75rem;
+  display:flex;flex-direction:column;gap:4px;
+}
+.log-line{
+  font-size:9px;color:var(--text3);letter-spacing:0.5px;
+  display:flex;gap:8px;align-items:center;
+}
+.log-line em{font-style:normal;color:var(--green);flex-shrink:0}
+.log-line.warn em{color:#ff9500}
+
+/* ─── TECH STACK ─── */
+.tech-section{
+  background:var(--bg2);
+  border-top:1px solid var(--border2);
+  border-bottom:1px solid var(--border2);
+  padding:5rem 4vw;
+}
+.tech-inner{max-width:1100px;margin:0 auto}
+.tech-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--border2);
+  border:1px solid var(--border2);
+  border-radius:4px;overflow:hidden;
+}
+
+.tech-item{
+  background:var(--bg2);
+  padding:1.75rem 1rem;
+  text-align:center;
+  transition:background 0.2s;
+  cursor:default;
+}
+.tech-item:hover{background:var(--panel)}
+
+.tech-icon{
+  width:36px;height:36px;
+  border:1px solid rgba(0,212,255,0.12);
+  border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 0.75rem;
+  background:rgba(0,212,255,0.04);
+  transition:border-color 0.2s;
+}
+.tech-item:hover .tech-icon{border-color:rgba(0,212,255,0.35)}
+.tech-icon svg{width:16px;height:16px;stroke:var(--cyan2);stroke-width:1.5;fill:none}
+.tech-item span{
+  display:block;font-family:'Share Tech Mono',monospace;
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);
+}
+
+/* ─── CONTACT ─── */
+.contact-section{background:var(--bg)}
+
+.contact-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:5rem;align-items:start;
+}
+
+.contact-form{
+  background:var(--bg3);
+  border:1px solid var(--border2);
+  border-radius:4px;padding:2.5rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+
+.form-header{margin-bottom:0.5rem}
+.form-header h3{
+  font-family:'Syne',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:-0.2px;
+}
+.form-header p{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;color:var(--text3);
+  margin-top:4px;letter-spacing:1px;
+}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group label{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:var(--text3);
+  font-weight:400;letter-spacing:2px;text-transform:uppercase;
+}
+.form-group input,
+.form-group textarea,
+.form-group select{
+  background:rgba(0,0,0,0.4);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:3px;padding:10px 13px;
+  color:white;font-size:13px;
+  font-family:'DM Sans',sans-serif;
+  transition:border-color 0.2s;outline:none;width:100%;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:rgba(255,255,255,0.12)}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{border-color:rgba(0,212,255,0.4)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-group select option{background:#060f1c}
+
+.contact-info-cards{display:flex;flex-direction:column;gap:0.75rem}
+
+.info-card{
+  background:var(--bg3);border:1px solid var(--border2);
+  border-radius:3px;padding:1.1rem 1.25rem;
+  display:flex;align-items:center;gap:1rem;
+  text-decoration:none;color:inherit;
+  transition:border-color 0.2s,background 0.2s;
+}
+.info-card:hover{border-color:rgba(0,212,255,0.25);background:rgba(0,212,255,0.02)}
+
+.info-icon{
+  width:36px;height:36px;min-width:36px;
+  background:rgba(0,212,255,0.06);
+  border:1px solid rgba(0,212,255,0.12);
+  border-radius:3px;
+  display:flex;align-items:center;justify-content:center;
+}
+.info-icon svg{width:15px;height:15px;stroke:var(--cyan2);stroke-width:1.8;fill:none}
+
+.info-label{
+  font-family:'Share Tech Mono',monospace;
+  font-size:8px;color:var(--text3);
+  text-transform:uppercase;letter-spacing:2px;margin-bottom:3px;
+}
+.info-value{font-size:13px;font-weight:500;color:var(--text)}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--bg2);
+  border-top:1px solid var(--border2);
+  padding:2rem 4vw;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+
+.footer-logo img{height:30px;width:auto;opacity:0.6;filter:grayscale(20%)}
+
+.footer-copy{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;
+}
+
+.footer-right{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:var(--text3);letter-spacing:1px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr}
+  .whyus{grid-template-columns:1fr;gap:3rem}
+  .contact-inner{grid-template-columns:1fr;gap:3rem}
+  .form-row{grid-template-columns:1fr}
+  .tech-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{flex-direction:column;gap:0}
+  .stat-item+.stat-item::before{top:0;bottom:auto;left:10%;right:10%;width:auto;height:1px}
+  .nav-links{display:none}
+  .corner,.hero-side-label{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="#" class="nav-logo">
+      <img src="./assets/logo.png">
+    <div class="nav-status">
+      <div class="nav-status-dot"></div>
+      SYS ONLINE
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#tecnologias">Stack</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato" class="nav-cta">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-scan"></div>
+  <div class="hero-glow"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+  <div class="hero-side-label left">PRIMETECH · CONSULTORIA EM TI · EST. 2019</div>
+  <div class="hero-side-label right">INFRAESTRUTURA · SEGURANÇA · DISPONIBILIDADE</div>
+
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    Sistema Online &nbsp;·&nbsp; Primetech Consultoria em TI
+  </div>
+
+  <h1>Infraestrutura sólida para<br><span class="highlight">empresas que não param.</span></h1>
+
+  <p class="hero-sub">Estabilidade, segurança e alta disponibilidade — do servidor ao usuário final.<br>Monitoramento proativo. Suporte ágil. Tecnologia que escala.</p>
+
+  <div class="hero-actions">
+    <a href="#contato" class="btn-primary">Solicitar Consultoria</a>
+    <a href="#servicos" class="btn-secondary">Ver Serviços</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">24<span>/7</span></div>
+      <div class="stat-label">Monitoramento</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">99<span>%</span></div>
+      <div class="stat-label">Disponibilidade</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100<span>+</span></div>
+      <div class="stat-label">Clientes</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5<span>+</span></div>
+      <div class="stat-label">Anos</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item"><em>▸</em> Manutenção de Servidores</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Monitoramento 24/7</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Suporte ao Usuário</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Cabeamento Estruturado</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Cloud & Virtualização</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Backup & Recovery</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Hardening & Segurança</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Kubernetes & DevOps</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Manutenção de Servidores</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Monitoramento 24/7</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Suporte ao Usuário</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Cabeamento Estruturado</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Cloud & Virtualização</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Backup & Recovery</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Hardening & Segurança</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item"><em>▸</em> Kubernetes & DevOps</span>
+    <span class="ticker-sep">·</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="servicos">
+  <div class="services-header">
+    <span class="section-eyebrow">O que fazemos</span>
+    <h2 class="section-title">Soluções completas em tecnologia</h2>
+    <p class="section-desc">Da manutenção de servidores ao suporte ao usuário, cobrimos todo o ciclo de TI da sua empresa.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-num">// 01</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+      </div>
+      <h3>Manutenção de Servidores</h3>
+      <p>Administração de servidores físicos e cloud, virtualização, backup, recuperação de dados, hardening e migração para nuvem.</p>
+      <div class="service-tags">
+        <span class="tag">Cloud</span>
+        <span class="tag">Virtualização</span>
+        <span class="tag">Backup</span>
+        <span class="tag">Hardening</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">// 02</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Monitoramento</h3>
+      <p>Implementação com Zabbix, Grafana, Elasticsearch e Kibana para servidores, aplicações, links e ambientes Kubernetes.</p>
+      <div class="service-tags">
+        <span class="tag">Zabbix</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">Kibana</span>
+        <span class="tag">Kubernetes</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">// 03</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3>Suporte ao Usuário</h3>
+      <p>Suporte remoto e presencial, help desk, configuração de softwares, e-mails corporativos e gerenciamento de usuários.</p>
+      <div class="service-tags">
+        <span class="tag">Help Desk</span>
+        <span class="tag">Remoto</span>
+        <span class="tag">Presencial</span>
+        <span class="tag">E-mail Corp.</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-num">// 04</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      </div>
+      <h3>Cabeamento Estruturado</h3>
+      <p>Projetos e implantação de cabeamento, organização de racks, certificação de pontos de rede, patch panels e fibra óptica.</p>
+      <div class="service-tags">
+        <span class="tag">Fibra Óptica</span>
+        <span class="tag">Patch Panel</span>
+        <span class="tag">Certificação</span>
+        <span class="tag">Racks</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<div class="tech-section" id="tecnologias">
+  <div class="tech-inner">
+    <div class="tech-header">
+      <div>
+        <span class="section-eyebrow">Stack Tecnológico</span>
+        <h2 class="section-title" style="max-width:none">Ferramentas que dominamos</h2>
+      </div>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <span>Zabbix</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <span>Grafana</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg></div>
+        <span>Elasticsearch</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <span>Kubernetes</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div>
+        <span>VMware</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+        <span>Cloud</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <span>Hardening</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><svg viewBox="0 0 24 24"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+        <span>Kibana</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="whyus-section" id="sobre">
+  <div class="whyus">
+    <div>
+      <span class="section-eyebrow">Por que a Primetech</span>
+      <h2 class="section-title">Tecnologia com propósito. Suporte com compromisso.</h2>
+      <p class="section-desc" style="margin-bottom:2.5rem">Especialistas em infraestrutura de TI com soluções sob medida para empresas que precisam de confiabilidade e agilidade.</p>
+      <div class="whyus-features">
+        <div class="feature-item">
+          <div class="feature-dot"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h4>Segurança e Estabilidade</h4>
+            <p>Boas práticas de hardening e monitoramento proativo para proteger seu ambiente 24/7.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <h4>Resposta Ágil</h4>
+            <p>Atendimento remoto e presencial com SLA ajustado às necessidades do seu negócio.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div>
+            <h4>Visibilidade Total</h4>
+            <p>Dashboards e alertas em tempo real para visibilidade completa sobre seu ambiente.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <h4>Parceria Estratégica</h4>
+            <p>Trabalhamos junto à sua equipe para evoluir a infraestrutura conforme o crescimento da empresa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="visual-box">
+      <div class="visual-header">
+        <span class="visual-title">// monitor.sys — live feed</span>
+        <div class="vdots"><div class="vdot r"></div><div class="vdot y"></div><div class="vdot g"></div></div>
+      </div>
+      <div class="monitoring-demo">
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label"><span>CPU_LOAD · srv-web-01</span><span>42%</span></div>
+          <div class="monitor-bar-track"><div class="monitor-bar-fill" style="width:42%"></div></div>
+        </div>
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label"><span>MEM_USAGE · srv-web-01</span><span>67%</span></div>
+          <div class="monitor-bar-track"><div class="monitor-bar-fill warn" style="width:67%"></div></div>
+        </div>
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label"><span>DISK_IO · storage-01</span><span>58%</span></div>
+          <div class="monitor-bar-track"><div class="monitor-bar-fill" style="width:58%"></div></div>
+        </div>
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label"><span>NET_BW · uplink</span><span>31%</span></div>
+          <div class="monitor-bar-track"><div class="monitor-bar-fill" style="width:31%"></div></div>
+        </div>
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label"><span>DB_CONN · postgres-01</span><span>55%</span></div>
+          <div class="monitor-bar-track"><div class="monitor-bar-fill" style="width:55%"></div></div>
+        </div>
+        <div class="monitor-bar-row">
+          <div class="monitor-bar-label"><span>K8S_NODES · cluster</span><span>3/3</span></div>
+          <div class="monitor-bar-track"><div class="monitor-bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="monitor-log">
+          <div class="log-line"><em>[OK]</em> 03:42:17 · Backup concluído — srv-db-01</div>
+          <div class="log-line"><em>[OK]</em> 03:38:05 · Certificado SSL renovado</div>
+          <div class="log-line warn"><em>[WARN]</em> 03:31:44 · MEM acima de 65% · srv-web-01</div>
+          <div class="log-line"><em>[OK]</em> 03:28:00 · Health check — todos os serviços</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contato">
+  <div class="contact-inner">
+    <div>
+      <span class="section-eyebrow">Entre em Contato</span>
+      <h2 class="section-title">Vamos conversar sobre seu ambiente de TI</h2>
+      <p class="section-desc" style="margin-bottom:2.5rem">Nossa equipe está pronta para entender as necessidades da sua empresa e propor a melhor solução técnica.</p>
+
+      <div class="contact-info-cards">
+        <a href="tel:+5592991171458" class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.36 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Telefone / WhatsApp</div>
+            <div class="info-value">(92) 99117-1458</div>
+          </div>
+        </a>
+        <a href="mailto:primetech.consultoria.ti@gmail.com" class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="info-label">E-mail</div>
+            <div class="info-value">primetech.consultoria.ti@gmail.com</div>
+          </div>
+        </a>
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Horário de Atendimento</div>
+            <div class="info-value">Seg – Sex · 08h00 às 18h00</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Localização</div>
+            <div class="info-value">Manaus, Amazonas — AM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-header">
+        <h3>Envie uma mensagem</h3>
+        <p>// Retorno em até 24h úteis</p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" placeholder="Seu nome" required/>
+        </div>
+        <div class="form-group">
+          <label>Empresa</label>
+          <input type="text" placeholder="Nome da empresa"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="seu@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label>Telefone</label>
+          <input type="tel" placeholder="(00) 00000-0000"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Serviço</label>
+        <select>
+          <option value="">Selecione um serviço</option>
+          <option>Manutenção de Servidores</option>
+          <option>Monitoramento</option>
+          <option>Suporte ao Usuário</option>
+          <option>Cabeamento Estruturado</option>
+          <option>Outro / Geral</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensagem</label>
+        <textarea placeholder="Descreva o que você precisa..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;padding:14px;border:none;cursor:pointer;border-radius:3px">Enviar Mensagem</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">
+    <img src="data:image/png;base64,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zVFJdm6dg0r9mqTY2N1XyRDyxI8FwZuyXnocdlg9I6m0tpTiG28Wtt5qbSyjqIQKmOIVBfLA+Ps123Ac4e3sqA5knxH+acyT4j/NPaIrTHxHRl4l+6P1Npg6Iq9IativEdI64suNPVWwRvkEgjMbmOZIQC0txgg5Bys9T8V7XTa71DforK+WiqtNGx2+lq2tmDtvIax1R1bkEQkuAz3AGe61k5knxH+acyT4j/NHcRfb4hUZLubKXLiVaKvU9+usVLXxUdx0nUWWjoRFEGUD5IQxsTNpAMLXZIdgOweoJ6n06D4p6d0rp/T9n+zdTXshqKie7PdUmNspnaYX7WA4kxB6I34657ZytYuZJ8R/mnNk+I/zR14NY5fiZ6Uk85LLq5adtVM2jkmkpg9whdM0Ne5mfRLgCQDjGQCRlWlxd4i6a1fWQXGgfe2zR1kU3hqi3UcUbGtZtdiWP+deegwHuI6n3Baxc2T4j/NObJ8R/msu5TabWxqqDSaybaxceYxqyWsda6ltFJcaqWSqaWmrlon850NI4HptZLMX+t7AB0b1pHnfmq45snxH+ac2T4j/ADSFxGG0RKhKW7NjqTiFaYeLem9XupK00VqpaKGaINbzXGGnbE4tG7GCQSMkdFXLZSAAq35snxH+ac2T4j/NZjdJbIw7dvuWTzk5yrbmSfEf5pzZPiP81t7YvA19l8yyhKvnN6qtubJ8R/mnNk+I/wA09s8h7L5k1v15joqZ0cbw6ocMNaD6vzKg6Iq1Wq6jyyxTpqmsBERREgREQBERAEREAREQBERAEREBk9L3Z1jvkF0ZEJXwB+1hOAS5jmj88r0ah1Ter4XMraxwgJzyI/Rj/Ee38crCIs5eMDAREWAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAf//Z" alt="Primetech"/>
+  </a>
+  <span class="footer-copy">© 2025 Primetech Consultoria em TI · Todos os direitos reservados</span>
+  <span class="footer-right">Manaus, AM · Brasil</span>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = '// Mensagem Enviada ✓';
+  btn.style.background = 'linear-gradient(135deg,#065f46,#059669)';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Enviar Mensagem';
+    btn.style.background = '';
+    btn.disabled = false;
+    e.target.reset();
+  }, 3500);
+}
+</script>
+</body>
+</html>
